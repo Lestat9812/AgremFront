@@ -1,15 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginService } from '../services/login.service';
 import Swal from 'sweetalert2';
-import { AgremiadoService } from '../services/agremiado.service';
+import { LoginService } from 'src/app/services/login.service';
+import { AgremiadoService } from 'src/app/services/agremiado.service';
 
 @Component({
-  selector: 'app-home-admin',
-  templateUrl: './home-admin.component.html',
-  styleUrls: ['./home-admin.component.css']
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css']
 })
-export class HomeAdminComponent {
+export class NavbarComponent implements OnInit {
+
   agremiados: any[] = [];
   constructor(private rou: Router, private authS: LoginService,private agremiado: AgremiadoService) { }
   logOut() {
@@ -51,14 +52,5 @@ export class HomeAdminComponent {
     }
   });
   }
-
- // userD: any;;
- // getUser() {
-   // const userL = JSON.parse(localStorage.getItem('user') || '[]');
- //   this.userD = userL;
-  //  console.log(this.userD);
-
-
-//  }
 
 }

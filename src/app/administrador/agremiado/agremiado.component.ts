@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
-import { AgremiadoService } from 'src/app/agremiado.service';
+import { Router } from '@angular/router';
+import { AgremiadoService } from 'src/app/services/agremiado.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-agremiado',
@@ -12,7 +14,7 @@ export class AgremiadoComponent {
   
 
 
-  constructor(private fb: FormBuilder, private tuServicio: AgremiadoService) {
+  constructor(private router: Router, private fb: FormBuilder, private tuServicio: AgremiadoService) {
     this.agremiadoForm = this.fb.group({
       a_paterno: ['', Validators.required, Validators.minLength(3), Validators.maxLength(50)],
       a_materno: ['', Validators.required, Validators.minLength(3), Validators.maxLength(50)],
@@ -31,11 +33,19 @@ export class AgremiadoComponent {
   agregarAgremiado() {
     const datosNuevoAgremiado = this.agremiadoForm.value;
 
-    this.tuServicio.agregarAgremiado2(datosNuevoAgremiado).subscribe(
+    this.tuServicio.agregarAgremiado(datosNuevoAgremiado).subscribe(
       response => {
         console.log('Agremiado agregado correctamente', response);
+        Swal.fire({
+          icon: 'success',
+          title: 'Agregado!',
+          text: 'Agremiado agregado correctamente',
+          showConfirmButton: true
+        });
         // Recargar la página después de agregar el agremiado
-        location.reload();
+        this.router.navigate(['/homeadmin/veragremiado']);
+
+        // location.reload();
       },
       error => {
         console.error('Error al agregar agremiado', error);

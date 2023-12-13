@@ -19,7 +19,8 @@
         <p class="text-muted mb-2"><strong>NUE:</strong> {{agremiado.NUE}}</p>
         <p class="text-muted mb-2"><strong>RFC:</strong> {{agremiado.RFC}}</p>
         <p class="text-muted mb-2"><strong>Fecha de Nacimiento:</strong> {{agremiado.fecha_nacimiento}}</p>
-        <p class="text-muted mb-2"><strong>Cuota:</strong> {{agremiado.cuota}}</p>
+        <p *ngIf="agremiado.cuota" class="text-muted mb-2"><strong>Cuota:</strong> PAGADA</p>
+        <p *ngIf="!agremiado.cuota" class="text-muted mb-2"><strong>Cuota:</strong> CON ADEUDO</p>
       </div>
     </div>
   </div>

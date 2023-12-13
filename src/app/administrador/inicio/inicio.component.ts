@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AgremiadoService } from 'src/app/agremiado.service';
-import { LoginService } from 'src/app/login.service';
-import { SolicitudService } from 'src/app/solicitud.service';
+import { AgremiadoService } from 'src/app/services/agremiado.service';
+import { LoginService } from 'src/app/services/login.service';
+import { SolicitudService } from 'src/app/services/solicitud.service';
 
 @Component({
   selector: 'app-inicio',

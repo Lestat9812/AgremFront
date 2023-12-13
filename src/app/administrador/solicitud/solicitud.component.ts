@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SolicitudService } from 'src/app/solicitud.service';
+import { SolicitudService } from 'src/app/services/solicitud.service';
 @Component({
   selector: 'app-solicitud',
   templateUrl: './solicitud.component.html',

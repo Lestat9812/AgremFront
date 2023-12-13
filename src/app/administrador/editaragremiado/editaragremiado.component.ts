@@ -1,6 +1,6 @@
 import { Component, Inject, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
-import { AgremiadoService } from 'src/app/agremiado.service';
+import { AgremiadoService } from 'src/app/services/agremiado.service';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import Swal from 'sweetalert2';
 interface Agremiado {

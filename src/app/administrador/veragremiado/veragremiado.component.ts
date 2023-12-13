@@ -1,6 +1,6 @@
 import { PageOrientation } from './../../../../node_modules/@types/pdfmake/interfaces.d';
 import { Component } from '@angular/core';
-import { AgremiadoService } from 'src/app/agremiado.service';
+import { AgremiadoService } from 'src/app/services/agremiado.service';
 import Swal from 'sweetalert2';
 import { MatDialog } from '@angular/material/dialog';
 import { EditaragremiadoComponent } from '../editaragremiado/editaragremiado.component';

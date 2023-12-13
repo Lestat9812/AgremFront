@@ -17,6 +17,7 @@ import { UsuarioComponent } from './usuario/usuario.component';
 import { AdminModule } from './administrador/admin.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     FormatosComponent,
     ConvocatoriasComponent,
     ConveniosComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

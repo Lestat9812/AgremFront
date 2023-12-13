@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { LoginService } from '../login.service';
+import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
 import * as pdfMake from 'pdfmake/build/pdfmake';
 import * as pdfFonts from 'pdfmake/build/vfs_fonts';
 import Swal from 'sweetalert2';
-import { AgremiadoService } from '../agremiado.service';
-import { SolicitudService } from '../solicitud.service';
-import { AuthService } from '../auth.service';
+import { AgremiadoService } from '../services/agremiado.service';
+import { SolicitudService } from '../services/solicitud.service';
+import { AuthService } from '../services/auth.service';
 interface Usuario {
   id: number;
   a_paterno: string;
@@ -45,11 +45,15 @@ export class UsuarioComponent {
   }
 
   getAgremiados() {
-    const idUsuarioLogeado = this.auth.getUser().id; // Utiliza la propiedad correcta para obtener el ID del usuario logeado
+    const nUEUsuarioLogeado = this.auth.getUser().NUE; // Utiliza la propiedad correcta para obtener el ID del usuario logeado
+    console.log(nUEUsuarioLogeado);
+    
     this.agremiado.getVerAagremido().subscribe(
       (data) => {
+        console.log(data);
+        
         // Filtra los datos para mostrar solo aquellos del usuario logeado
-        this.agremiados = data.filter((agremiado: { id: any; }) => agremiado.id === idUsuarioLogeado);
+        this.agremiados = data.filter((agremiado: { NUE: any; }) => agremiado.NUE === nUEUsuarioLogeado);
 
         console.log('Datos obtenidos del usuario logeado:', this.agremiados);
       },

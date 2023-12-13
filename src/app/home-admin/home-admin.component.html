@@ -1,49 +1,6 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-body-dark bg-dark">
-  <div class="container-fluid">
-    <button class="navbar-toggler custom-navbar-toggler-icon" type="button" data-bs-toggle="offcanvas"
-      data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <a *ngFor="let agremiado of agremiados" class="navbar-brand">{{agremiado.nombre}}</a>
-
-
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menú</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body px-0">
-        <ul class="navbar-nav justify-content-end flex-grow-1 ">
-          <li class="nav-item">
-            <a class="nav-link ms-4 " aria-current="page" routerLink="./homeadmin" data-bs-dismiss="offcanvas">
-              <span class="ms-2">Home</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link ms-4" routerLink="./veragremiado" data-bs-dismiss="offcanvas">
-              <span class="ms-2">Ver Agremiado</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link ms-4" routerLink="./agremiado" data-bs-dismiss="offcanvas">
-              <span class="ms-2">Agregar Agremiado</span> </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link ms-4" routerLink="./solicitud" data-bs-dismiss="offcanvas">
-              <span class="ms-2">Ver Solicitud</span> </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link ms-4" routerLink="confirmarAlert()" (click)="confirmarAlert()" data-bs-dismiss="offcanvas">
-              <span class="ms-2">Cerrar Sesión</span> </a>
-          </li>
-        </ul>
-
-      </div>
-    </div>
-  </div>
-</nav>
+<app-navbar></app-navbar>
 
 <br> <br> <br>
-
 
 <div class="container-fluid">
   <router-outlet> </router-outlet>
